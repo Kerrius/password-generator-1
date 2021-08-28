@@ -22,7 +22,7 @@ var get = document.querySelector("#generate");
 
 get.addEventListener("click", function () {
     ps = generatePassword();
-    document.getElementById("password").placeholder = ps;
+    document.getElementById("password") = ps;
 });
 
 // Start function to generate password
@@ -67,12 +67,12 @@ function generatePassword() {
       choices = special.concat(upper, number);
     }
     
-    else if (confirmCharacter && confirmlowercase && confirmUppercase) {
+    else if (confirmCharacter && confirmLowercase && confirmUppercase) {
       
       choices = special.concat(lower, number);
     }
     
-    else if (confirmlowercase && confirmNumber && confirmUppercase) {
+    else if (confirmLowercase && confirmNumber && confirmUppercase) {
       
       choices = number.concat(lower, upper);
     }
@@ -93,12 +93,12 @@ function generatePassword() {
       choices = special.concat(lower);
     }
     
-    else if (confirmlowercase && confirmNumber) {
+    else if (confirmLowercase && confirmNumber) {
 
       choices = lower.concat(number);
     }
     
-    else if (confirmlowercase && confirmUppercase) {
+    else if (confirmLowercase && confirmUppercase) {
 
       choices = lower.concat(upper);
     }
@@ -121,7 +121,7 @@ function generatePassword() {
       choices = upper;
     }
     
-    else if (confirmlowercase) {
+    else if (confirmLowercase) {
       choices = lower;
     }
 
